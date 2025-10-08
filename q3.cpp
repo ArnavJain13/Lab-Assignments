@@ -15,7 +15,7 @@ public:
     }
 
     ~Queue() {
-        delete[] arr;
+        delete[] arr; 
     }
 
     bool isEmpty() {
