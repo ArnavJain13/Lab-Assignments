@@ -74,7 +74,7 @@ void firstNonRepeating(string str) {
 
 int main() {
     string str;
-    cout << "Enter characters (no spaces, or use space-separated input like 'a a b c'): ";
+    cout << "Enter characters: ";
     getline(cin, str);
 
     string cleaned = "";
