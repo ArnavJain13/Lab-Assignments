@@ -28,7 +28,7 @@ public:
 
     void enqueue(int x) {
         if (isFull()) {
-            cout << "Queue Overflow! Cannot insert " << x << endl;
+            cout << "Queue overflow " << x << endl;
             return;
         }
 
@@ -39,19 +39,18 @@ public:
         }
 
         arr[rear] = x;
-        cout << x << " enqueued successfully.\n";
+        cout << x << "Enqueue done \n";
     }
 
     void dequeue() {
         if (isEmpty()) {
-            cout << "Queue Underflow! Nothing to delete.\n";
+            cout << "Queue underflow \n";
             return;
         }
 
-        cout << arr[front] << " dequeued successfully.\n";
+        cout << arr[front] << " Dequeue done \n";
 
         if (front == rear) {
-            // Queue becomes empty
             front = rear = -1;
         } else {
             front = (front + 1) % MAX;
@@ -60,7 +59,7 @@ public:
 
     void peek() {
         if (isEmpty()) {
-            cout << "Queue is empty.\n";
+            cout << "Queue empty.\n";
         } else {
             cout << "Front element: " << arr[front] << endl;
         }
@@ -68,7 +67,7 @@ public:
 
     void display() {
         if (isEmpty()) {
-            cout << "Queue is empty.\n";
+            cout << "Queue empty \n";
             return;
         }
 
@@ -93,7 +92,6 @@ int main() {
     int choice = -1, value;
 
     while (choice != 0) {
-        cout << "\n===== CIRCULAR QUEUE MENU =====\n";
         cout << "1. Enqueue\n";
         cout << "2. Dequeue\n";
         cout << "3. Peek\n";
@@ -119,10 +117,10 @@ int main() {
             q.display();
         }
         else if (choice == 5) {
-            cout << (q.isEmpty() ? "Queue is empty.\n" : "Queue is not empty.\n");
+            cout << (q.isEmpty() ? "Queue empty.\n" : "Queue not empty.\n");
         }
         else if (choice == 6) {
-            cout << (q.isFull() ? "Queue is full.\n" : "Queue is not full.\n");
+            cout << (q.isFull() ? "Queue full.\n" : "Queue not full.\n");
         }
         else if (choice == 0) {
             cout << "Exiting program...\n";
