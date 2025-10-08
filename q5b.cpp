@@ -1,6 +1,5 @@
 #include <iostream>
 using namespace std;
-
 class Queue {
     int* arr;
     int front, rear, MAX;
@@ -27,7 +26,7 @@ public:
 
     void enqueue(int x) {
         if (isFull()) {
-            cout << "Queue Overflow!\n";
+            cout << "Queue overflow \n";
             return;
         }
         if (isEmpty()) front = 0;
@@ -36,7 +35,7 @@ public:
 
     int dequeue() {
         if (isEmpty()) {
-            cout << "Queue Underflow!\n";
+            cout << "Queue underflow \n";
             return -1;
         }
         int val = arr[front];
@@ -59,7 +58,7 @@ public:
 
     void display() {
         if (isEmpty()) {
-            cout << "Queue is empty.\n";
+            cout << "Queue empty \n";
             return;
         }
         for (int i = front; i <= rear; i++)
@@ -68,7 +67,6 @@ public:
     }
 };
 
-// Stack implemented using ONE Queue
 class Stack {
     Queue q;
 public:
@@ -76,32 +74,31 @@ public:
 
     void push(int x) {
         if (q.isFull()) {
-            cout << "Stack Overflow!\n";
+            cout << "Stack overflow!\n";
             return;
         }
 
         int n = q.size();
         q.enqueue(x);
 
-        // Rotate the queue elements (bring new element to front)
         for (int i = 0; i < n; i++) {
             int temp = q.dequeue();
             q.enqueue(temp);
         }
-        cout << x << " pushed onto stack.\n";
+        cout << x << " pushed into stack.\n";
     }
 
     void pop() {
         if (q.isEmpty()) {
-            cout << "Stack Underflow!\n";
+            cout << "Stack underflow \n";
             return;
         }
-        cout << q.dequeue() << " popped from stack.\n";
+        cout << q.dequeue() << " popped from stack \n";
     }
 
     void top() {
         if (q.isEmpty()) {
-            cout << "Stack is empty.\n";
+            cout << "Stack empty \n";
         } else {
             cout << "Top element: " << q.frontElement() << endl;
         }
@@ -109,7 +106,7 @@ public:
 
     void display() {
         if (q.isEmpty()) {
-            cout << "Stack is empty.\n";
+            cout << "Stack empty.\n";
             return;
         }
 
@@ -126,7 +123,6 @@ int main() {
     Stack s(size);
 
     while (choice != 0) {
-        cout << "\n===== STACK USING ONE QUEUE =====\n";
         cout << "1. Push\n";
         cout << "2. Pop\n";
         cout << "3. Top\n";
@@ -150,10 +146,10 @@ int main() {
             s.display();
         }
         else if (choice == 0) {
-            cout << "Exiting program...\n";
+            cout << "Exiting program \n";
         }
         else {
-            cout << "Invalid choice! Try again.\n";
+            cout << "Invalid choice \n";
         }
     }
 
