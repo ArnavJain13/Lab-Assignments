@@ -1,4 +1,4 @@
-#include <iostream> //Comment
+#include <iostream> 
 using namespace std;
 
 int arr[100];
